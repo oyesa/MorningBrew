@@ -25,3 +25,7 @@ class RegistrationAPIView(APIView):
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+class LoginApiView(GenericAPIView):#login a auser
+    permission_classes =(AllowAny,)
+    renderer_classes = (UserJSONRenderer,)
+    serializer_class = LoginSerializer
