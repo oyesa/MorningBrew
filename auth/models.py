@@ -49,14 +49,4 @@ class FndUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-
-
-
-
-
-
-
-
-
-
-
+        

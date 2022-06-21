@@ -43,9 +43,24 @@ class LoginApiView(GenericAPIView):
 #get a user and update
 
 class FndUserRetrieveupdateApiView(RetrieveUpdateAPIView):
-     permission_classes = (IsAuthenticated,)
-     renderer_classes = (UserJSONRenderer,)
-     serializer_class = FndUserSerializer
+    permission_classes = (IsAuthenticated,)
+    renderer_classes = (UserJSONRenderer,)
+    serializer_class = FndUserSerializer
+
+    #get current logged in user
+    def retrieve(self, request, *args, **kwargs):
+        serializer = self.serializer_class(request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+        
+    #update users
+    def update(self, request, *args, **kwargs):
+        serializer_data = request.data
+        serializer = self.serializer_class(request.user, data = serializer_data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 
 
