@@ -41,5 +41,63 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=128, write_only=True, allow_blank=True)
     token = serializers.CharField(max_length=255, read_only=True)
 
-#method to validate that what the user logged in is what is in the database
+    #method to validate that what the user logged in is what is in the database
     def validate(self, data):
+        email = data.get('email', None)
+        password = data.get('password', None)
+
+        #raise error if email and password are not provided
+        #we pass in email as username since we declared it in the models
+        if not email and not password:
+                resp = {
+                    'email': 'An email address is required to log in.',
+                    'password': 'A password is required to log in.'
+                }
+                raise serializers.ValidationError(resp)
+
+        # check if user exists
+        user = authenticate(username=email, password=password)
+
+        #raise error if authenticate which handles checking for user returns none
+        if user is None:
+                resp = {
+                    'credentials': 'Wrong email or password.'
+                }
+                raise serializers.ValidationError(resp)
+
+        #raise error if user has been deactivated.use django flag on user model called is_active        
+        if not user.is_active:
+                raise serializers.ValidationError(
+                    'This user has been deactivated.'
+                )
+        return {
+            'email': user.email,
+            'username': user.username,
+            'token': user.token,
+        }
+
+
+
+class FndUserSerializer(serializers.ModelSerializer):
+     password = serializers.CharField(
+        max_length=150,
+        min_length=8,
+        write_only=True, 
+        required=True
+    )
+     class Meta:
+        model = FndUser
+        fields = ('email', 'username', 'token', 'password')
+
+
+
+
+
+
+
+
+
+
+
+
+
