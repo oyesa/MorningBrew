@@ -77,7 +77,7 @@ class LoginSerializer(serializers.Serializer):
         }
 
 
-
+#handle serialization and deserialization of user
 class FndUserSerializer(serializers.ModelSerializer):
      password = serializers.CharField(
         max_length=150,
@@ -89,7 +89,18 @@ class FndUserSerializer(serializers.ModelSerializer):
         model = FndUser
         fields = ('email', 'username', 'token', 'password')
 
+#update the user
+def update(self,instance,validated_data):
+    password = validated_data.pop('password', None)# to remove password from validated data then iterate it since they are hashed
+    for(key, value)in validated_data.items():
+        setattr(instance,key,value)
 
+    if password is not None:
+        instance.set_password(password)
+    instance.save()
+    return instance
+
+        
 
 
 
