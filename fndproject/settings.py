@@ -130,3 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LEAFLET_CONFIG ={
+    'DEFAULT_CENTER': (.023, 36.87), #KENYA
+    'DEFAULT_ZOOM': 5,# ZOOM
+    'MAX_ZOOM': 20,
+    'MIN_ZOOM': 3,
+    'SCALE': 'both', #imperial/metric
+    'ATTRIBUTION_PREFIX':'Inspired By Life in Moringa School'
+}
