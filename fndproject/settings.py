@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authapp',
     'rest_framework',
+    'portfolio',
+
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
-        'USER': 'oyesa',
-    'PASSWORD':'Mimo33',
+        'USER': 'moringa',
+    'PASSWORD':'jaelatieno',
     }
 }
 
@@ -123,6 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'authapp.FndUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
