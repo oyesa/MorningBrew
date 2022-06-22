@@ -10,7 +10,8 @@ from cloudinary import CloudinaryImage
 FndUser = get_user_model()
 
 class Profile(models.Model):
-    user = models.OneToOneField("authentication.FndUser", related_name="profile",on_delete=models.CASCADE)
+    user = models.OneToOneField("authapp.FndUser", 
+    related_name="profile",on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=30, blank=True)
     bio = models.TextField(max_length=500, blank=True)
