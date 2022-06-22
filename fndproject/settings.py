@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authapp',
+    'services',
     'rest_framework',
 ]
 
@@ -79,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
-        'USER': 'oyesa',
-    'PASSWORD':'Mimo33',
+        'USER': 'rachel',
+    'PASSWORD':'hotspurs',
     }
 }
 
