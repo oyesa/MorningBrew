@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'authapp',
     'profiles',
     'rest_framework',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -62,11 +63,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fndproject.wsgi.application'
 
 DATABASES = {
-    'default': {
+    'default':{},
+    'auth': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
         'USER': 'moringa',
     'PASSWORD':'Mimo43',
+    },
+    'profiles':{
+       'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fndProfile',
+        'USER': 'moringa',
+    'PASSWORD':'Mimo53',  
     }
 }
 
