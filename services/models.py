@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from unicodedata import category
 from django.db import models
 
 # Create your models here.
@@ -10,3 +8,6 @@ class Service(models.Model):
 
     def save_service(self):
         self.save()
+
+    def __str__(self):
+        return self.name    
