@@ -1,14 +1,17 @@
 from django.contrib import admin
-from .models import Incidences
+from .models import Incidences, Counties
+#from django.contrib.gis.db import OSMGeoAdmin
 from leaflet.admin import LeafletGeoAdmin
 
-
-#ADMIN=MorningBrew 
-#Password=SEMBERUA
-# email:kevin.kipkemoi@student.moringaschool.com 
 # Register your models here.
-class IncidencesAdmin(LeafletGeoAdmin):
-    list_display=('name', 'location')
 
+class IncidencesAdmin(LeafletGeoAdmin):
+	#pass
+	list_display =('name','location')
+
+class CountiesAdmin(LeafletGeoAdmin):
+	#pass
+	list_display =('counties','codes')
 
 admin.site.register(Incidences, IncidencesAdmin)
+admin.site.register(Counties, CountiesAdmin)
