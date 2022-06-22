@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import FndUser
 from django.contrib.auth import authenticate
 from rest_framework.validators import UniqueValidator
-from authors.utils.password_validators import get_password_policy_errors
+# from authors.utils.password_validators import get_password_policy_errors
 
 # Request and create a new user
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -21,11 +21,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
             )
         ]
     )
-    def validate_password(self, value):
-        errors = get_password_policy_errors(value)
-        if errors:
-            raise serializers.ValidationError(errors)
-        return value
+    # def validate_password(self, value):
+    #     errors = get_password_policy_errors(value)
+    #     if errors:
+    #         raise serializers.ValidationError(errors)
+    #     return value
 
     class Meta:
         model = FndUser
