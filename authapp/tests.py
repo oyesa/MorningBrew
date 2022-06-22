@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 # Create your tests here.
 class FndUserManagerTest(TestCase):
     def setUp(self):
-        self.test = User(username = 'test',email = 'tess@gmail.com', password ='1234')
-        self.test = FndUserManager( email='tess@gmail.com')
+        self.test = User(username = 'test',email = 'anne@gmail.com', password ='1234')
+        self.test = FndUserManager( email='anne@gmail.com')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.test,FndUserManager))
