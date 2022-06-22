@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Service(models.Model):
     name = models.CharField(max_length=150)
+    image = models.ImageField(upload_to = 'pictures/', default='No image')
     description = models.TextField()
     artisan_category = models.ForeignKey('Category',on_delete=models.CASCADE,default='')
 
