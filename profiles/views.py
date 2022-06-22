@@ -6,12 +6,11 @@ from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from authapp.models import FndUser
-
+from .exceptions import *
 import json
 from .models import*
-from .serializers import (UserProfileSerializer)
+from .serializers import (UserProfileSerializer,UpdateUserProfileSerializer,UserListSerializer)
 # Create your views here.
 
 
 class UserProfileView(GenericAPIView):
-  pass
