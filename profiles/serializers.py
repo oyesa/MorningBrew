@@ -29,6 +29,7 @@ class UserProfileSerializer(BaseSerializer):
             'username', 'first_name', 'last_name', 'bio', 'img_url',
              'created_at', 'updated_at'
         )
+        
 #SERIALIZER TO UPDATE USERS PROFILE
 class UpdateUserProfileSerializer(serializers.ModelSerializer):
   
