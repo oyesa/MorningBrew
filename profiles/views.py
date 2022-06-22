@@ -12,5 +12,26 @@ from .models import*
 from .serializers import (UserProfileSerializer,UpdateUserProfileSerializer,UserListSerializer)
 # Create your views here.
 
-
+#class to get user profile
 class UserProfileView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = UserProfileSerializer
+
+    #enpoint to get user data from profle
+
+    def get(self, request, username):
+        try:
+              profile = Profile.objects.get(user__username=username)
+        except Exception:
+              return Response({
+                  'errors': {
+                      'user': ['User does not exist']
+                  }
+              }, status=status.HTTP_404_NOT_FOUND)
+        if request.user.username == username:
+            serializer = UserProfileSerializer(
+                profile, context={'request': request},
+            )
+        return Response({
+            'profile': serializer.data
+        }, status=status.HTTP_200_OK)
