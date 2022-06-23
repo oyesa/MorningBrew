@@ -1,6 +1,7 @@
 
 import os
 import cloudinary
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,15 +27,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'services',
     'rest_framework',
     'portfolio',
     'ratings',
-
     'authapp',
     'profiles',
     'cloudinary',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
+cloudinary.config(
+  cloud_name = "oyesa",
+  api_key = "749352579693875",
+  api_secret = "W6qFNFY_0mRnS6YbzrzWwegcfCY",
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,8 +77,8 @@ DATABASES = {
      {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
-        'USER': 'postgres',
-    'PASSWORD':'Atara',
+        'USER': 'rachel',
+    'PASSWORD':'hotspurs',
     }
   
 }

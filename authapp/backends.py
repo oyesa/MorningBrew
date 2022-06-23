@@ -1,7 +1,7 @@
 import jwt
 from django.conf import settings
 from rest_framework import authentication, exceptions
-from .models import FndUser
+from ..services.models import FndUser
 
 #    This class will handle users' authentication
 class JWTAuthentication(authentication.BaseAuthentication):
