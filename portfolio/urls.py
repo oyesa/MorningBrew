@@ -11,8 +11,7 @@ router.register('portfolios', views.PortfolioViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
-
-    
+  
 ]
 
 if settings.DEBUG:
