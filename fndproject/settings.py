@@ -27,18 +27,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'services',
-=======
     'rest_framework',
     'portfolio',
     'ratings',
-
->>>>>>> development
     'authapp',
     'profiles',
     'cloudinary',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
 cloudinary.config(
   cloud_name = "oyesa",
@@ -81,13 +77,8 @@ DATABASES = {
      {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
-<<<<<<< HEAD
         'USER': 'rachel',
     'PASSWORD':'hotspurs',
-=======
-        'USER': 'postgres',
-    'PASSWORD':'Atara',
->>>>>>> development
     }
   
 }
