@@ -47,7 +47,8 @@ class UserProfileView(GenericAPIView):
 class UpdateUserProfileView(GenericAPIView):
     permission_classes = [permissions.IsAuthenticated, ]
     serializer_class = UpdateUserProfileSerializer
-
+    
+   #endpoint to update user profile
     def patch(self, request, username):
         try:
             profile = Profile.objects.get(user__username=username)
