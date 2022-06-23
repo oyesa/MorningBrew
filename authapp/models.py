@@ -1,3 +1,6 @@
+import jwt
+from datetime import datetime, timedelta
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
@@ -47,3 +50,24 @@ class FndUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    #since we do not store their real name we return their username
+    def get_full_name(self):
+        return self.username
+
+    #this allows us to return the jwt token by calling user.token method
+    def token(self):
+        return self.generate_jwt_token()
+
+
+      #generate token using user emailand username .token is generated during signup  
+    def generate_jwt_token(self):
+        user_details = {'email':self.email,'username':self.username}
+        token = jwt.encode(
+            {
+                'user_data':user_details,
+                'exp':datetime.now() + timedelta(hours=24)
+            },settings.SECRET_KEY,algorithm ='HS256'
+        )
+        return token.decode('utf-8')
+        
