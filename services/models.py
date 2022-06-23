@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.db import models
 from cloudinary.models import CloudinaryField
 
@@ -16,5 +17,15 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name  
+
+class Comment(models.Model):
+    name = models.CharField(max_length=100)
+    comment = models.TextField()
+
+    def save_comment(self):
+        self.save()
+
+    def __str__(self):
+        return self.comment
 
   
