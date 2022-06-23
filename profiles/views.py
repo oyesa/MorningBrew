@@ -51,6 +51,7 @@ class UpdateUserProfileView(GenericAPIView):
     def patch(self, request, username):
         try:
             profile = Profile.objects.get(user__username=username)
+            
         except Exception:
             return Response({
                 'errors': {
