@@ -27,10 +27,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'services',
+=======
+    'rest_framework',
+    'portfolio',
+    'ratings',
+
+>>>>>>> development
     'authapp',
     'profiles',
-    'rest_framework',
     'cloudinary',
     'rest_framework.authtoken'
 ]
@@ -75,8 +81,13 @@ DATABASES = {
      {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
+<<<<<<< HEAD
         'USER': 'rachel',
     'PASSWORD':'hotspurs',
+=======
+        'USER': 'postgres',
+    'PASSWORD':'Atara',
+>>>>>>> development
     }
   
 }
