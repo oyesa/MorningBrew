@@ -6,10 +6,13 @@ from .models import *
 class ServiceSerializer(ModelSerializer):
     class Meta:
         model = Service
-        fields = '__all__'
+        fields = ['name','image','description','category','phone_number']
+        # exclude = ['id']
         # depth = 1
 
-class CommentSerializer(ModelSerializer):
+class RatingsSerializer(ModelSerializer):
     class Meta:
-        model = Comment
-        fields = '__all__'
+        model = Ratings
+        fields = ['service','skills','time','affordability',]
+        # fields = '__all__'
+        # exclude = (id)
