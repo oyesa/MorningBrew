@@ -11,7 +11,6 @@ router.register('ratings',RatingsViewSet)
 urlpatterns = [
     # path('api/service/',views.ServiceList.as_view()),
     path('api/',include(router.urls)),
-    path('api/',include(router.urls)),
     path('api/service/<int:pk>', views.showservice, name='service'),
 ]
 
