@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'leaflet',
     'reporter',
     'rest_framework',
     'bootstrap4',
     'crispy_forms',
     'cloudinary',
+    'leaflet'
+
     
     
 
