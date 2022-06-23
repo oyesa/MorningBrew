@@ -1,6 +1,6 @@
 
 import os
-
+import cloudinary
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -112,3 +112,14 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'authapp.FndUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+  cloud_name = "oyesa",
+  api_key = "749352579693875",
+  api_secret = "W6qFNFY_0mRnS6YbzrzWwegcfCY",
+)
+
+
+
+
+

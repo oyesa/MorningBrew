@@ -27,12 +27,19 @@ class UserProfileView(GenericAPIView):
                       'user': ['User does not exist']
                   }
               }, status=status.HTTP_404_NOT_FOUND)
+
         if request.user.username == username:
             serializer = UserProfileSerializer(
                 profile, context={'request': request},
             )
+        else:
+            serializer = UserProfileSerializer(
+                profile, context={'request': request}
+            )
         return Response({
+
             'profile': serializer.data
+
         }, status=status.HTTP_200_OK)
 
 
