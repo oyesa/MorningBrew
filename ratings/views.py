@@ -7,3 +7,4 @@ from .serializers import *
 class RatingsViewSet(viewsets.ModelViewSet):
     queryset = Ratings.objects.all()
     serializer_class = RatingsSerializer
+
