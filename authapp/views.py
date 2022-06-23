@@ -8,11 +8,6 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from .serializers import (RegistrationSerializer,LoginSerializer,FndUserSerializer)
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
-from rest_framework.authentication import (
-    TokenAuthentication,
-    get_authorization_header
-)
-from django.conf import settings
 from .authentication_handlers import*
 from .models import *
 
@@ -27,14 +22,14 @@ class RegistrationAPIView(APIView):
        
         data = request.data
 
-        serializer = self.serializer_class(data=data)
+        serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        user = FndUser.objects.get(email=data.get("email"))
+        user = request.data.get('FndUser', {})
         token = AuthTokenHandler.create_auth_token(user)
         data["token"] = token.key
       
-        return Response( status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 #login a user
