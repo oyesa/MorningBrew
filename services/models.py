@@ -1,11 +1,14 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
+# phone number,category
 class Service(models.Model):
     name = models.CharField(max_length=150)
-    image = models.ImageField(upload_to = 'pictures/', default='No image')
+    image = CloudinaryField('image',null=True)
     description = models.TextField()
-    artisan_category = models.ForeignKey('Category',on_delete=models.CASCADE,default='')
+    category = models.CharField(max_length=100,default='category')
+    phone_number = models.IntegerField(default=0, null=True, blank=True)
 
 
     def save_service(self):
@@ -14,14 +17,4 @@ class Service(models.Model):
     def __str__(self):
         return self.name  
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=30)
-
-    def save_category_name(self):
-        self.save()
-
-    def delete_category_name(self):
-        self.delete()
-
-    def __str__(self):
-        return self.category_name  
+  
