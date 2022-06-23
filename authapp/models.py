@@ -32,8 +32,7 @@ class FndUserManager(BaseUserManager):
       user.save()
 
       return user
-
-
+ 
 class FndUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(db_index=True, max_length=255, unique=True)
     email = models.EmailField(db_index=True, unique=True)
@@ -70,4 +69,8 @@ class FndUser(AbstractBaseUser, PermissionsMixin):
             },settings.SECRET_KEY,algorithm ='HS256'
         )
         return token.decode('utf-8')
+
+
+
+
         

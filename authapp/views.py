@@ -6,7 +6,15 @@ from rest_framework import status
 from rest_framework.generics import GenericAPIView,RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from .serializers import (RegistrationSerializer,LoginSerializer,FndUserSerializer)
-
+from django.contrib.auth import get_user_model
+from rest_framework.authtoken.models import Token
+from rest_framework.authentication import (
+    TokenAuthentication,
+    get_authorization_header
+)
+from django.conf import settings
+from .authentication_handlers import*
+from .models import *
 
 # Create views here.
 class RegistrationAPIView(APIView):
@@ -17,12 +25,16 @@ class RegistrationAPIView(APIView):
     
     def post(self, request):
        
-        user = request.data.get('FndUser', {})
-        serializer = self.serializer_class(data=user)
+        data = request.data
+
+        serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        user = FndUser.objects.get(email=data.get("email"))
+        token = AuthTokenHandler.create_auth_token(user)
+        data["token"] = token.key
+      
+        return Response( status=status.HTTP_201_CREATED)
 
 
 #login a user
