@@ -25,3 +25,7 @@ class ServiceList(APIView):
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
     permission_classes = (IsAdminOrReadOnly,)
 
+class CommentViewSet(ModelViewSet):
+    serializer_class=CommentSerializer
+    queryset=Comment.objects.all()
+

@@ -8,3 +8,8 @@ class ServiceSerializer(ModelSerializer):
         model = Service
         fields = '__all__'
         # depth = 1
+
+class CommentSerializer(ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
