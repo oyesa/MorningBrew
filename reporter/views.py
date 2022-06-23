@@ -3,7 +3,9 @@ from django.views.generic import TemplateView
 from django.core.serializers import serialize
 from django.http import HttpResponse
 from models import Counties,Incidences
-from . import models
+from reporter import views
+
+
 
 # Create your views here.
 class HomePageView(TemplateView):
