@@ -1,11 +1,11 @@
-from django.conf.urls import include,url
+from django.urls import include, re_path
 
 from views import HomePageView, county_datasets,point_datasets
 
 urlpatterns = [
-	url(r'^$', HomePageView.as_view(), name = 'home'),
-	url(r'^county_data/$', county_datasets, name = 'county'),
-	url(r'^incidence_data/$', point_datasets, name = 'incidences'),
+	re_path(r'^$', HomePageView.as_view(), name = 'home'),
+	re_path(r'^county_data/$', county_datasets, name = 'county'),
+	re_path(r'^incidence_data/$', point_datasets, name = 'incidences'),
 
 
 ]
