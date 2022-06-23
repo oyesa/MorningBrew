@@ -151,7 +151,7 @@ LEAFLET_CONFIG ={
     'ATTRIBUTION_PREFIX':'Inspired By Life in Moringa School'
 }
 
-if os.name == 'nt':
-    VENV_BASE = os.environ['VIRTUAL_ENV']
-    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
-    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
+
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
