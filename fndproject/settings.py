@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import  django.contrib.gis
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'crispy_forms',
     'cloudinary',
-    'leaflet'
+    'leaflet',
+     
 
     
     
