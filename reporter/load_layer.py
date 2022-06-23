@@ -14,4 +14,4 @@ county_shp = os.path .abspath(os.path.join(os.path.dirname(__file__),'data/count
 
 def run(verbose=True):
 	lm = LayerMapping(Counties, county_shp, countie_mapping, transform= False, encoding='iso-8859-1')
-	lm.save(strict=True,verbose=verbose) #save data to DB
+	lm.save(strict=True,verbose=verbose)
