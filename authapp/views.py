@@ -21,11 +21,11 @@ class RegistrationAPIView(APIView):
     def post(self, request):
        
         data = request.data
-
+        user = request.data.get('FndUser', {})
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        user = request.data.get('FndUser', {})
+        
         token = AuthTokenHandler.create_auth_token(user)
         data["token"] = token.key
       

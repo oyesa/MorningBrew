@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'authapp',
     'profiles',
     'rest_framework',
-    'cloudinary'
+    'cloudinary',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [

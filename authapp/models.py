@@ -68,7 +68,8 @@ class FndUser(AbstractBaseUser, PermissionsMixin):
                 'exp':datetime.now() + timedelta(hours=24)
             },settings.SECRET_KEY,algorithm ='HS256'
         )
-        return token.decode('utf-8')
+        
+        return token
 
 
 
