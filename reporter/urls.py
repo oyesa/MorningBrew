@@ -1,5 +1,5 @@
 from django.urls import re_path
-from views import HomePageView, county_datasets,point_datasets
+from .views import HomePageView, county_datasets,point_datasets
 
 urlpatterns = [
 	re_path(r'^$', HomePageView.as_view(), name = 'home'),
