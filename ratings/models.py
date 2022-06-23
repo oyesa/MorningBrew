@@ -27,10 +27,10 @@ class Ratings(models.Model):
         self.save()
 
     def __str__(self):
-        return f'{self.post} Ratings'
+        return f'{self.service} Ratings'
 
     @classmethod
     def get_ratings(cls, id):
-        ratings = Ratings.objects.filter(service_id=id).all()
+        # ratings = Ratings.objects.filter(service_id=id).all()
         return ratings
 

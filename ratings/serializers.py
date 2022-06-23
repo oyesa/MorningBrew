@@ -5,4 +5,4 @@ from .models import *
 class RatingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ratings
-        fields = __all__
+        fields = "__all__"

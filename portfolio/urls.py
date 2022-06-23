@@ -8,6 +8,9 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('portfolios', views.PortfolioViewSet)
+router.register('comments', views.CommentViewSet)
+
+
 
 urlpatterns = [
     path('api/', include(router.urls)),
