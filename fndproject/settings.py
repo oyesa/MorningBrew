@@ -26,9 +26,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'portfolio',
+    'ratings',
+
     'authapp',
     'profiles',
-    'rest_framework',
     'cloudinary',
     'rest_framework.authtoken'
 ]
@@ -109,7 +112,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'authapp.FndUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
