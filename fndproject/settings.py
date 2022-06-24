@@ -1,5 +1,10 @@
 
 import os
+import  django.contrib.gis
+import cloudinary
+import osgeo
+
+
 import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,6 +47,14 @@ cloudinary.config(
   api_secret = "W6qFNFY_0mRnS6YbzrzWwegcfCY",
 )
 
+
+cloudinary.config(
+  cloud_name = "moringa-kipkemoi",
+  api_key = "583484295129265",
+  api_secret = "iUp89baICJSY--PpsiI7aOIuGOg",
+)
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -57,7 +70,7 @@ ROOT_URLCONF = 'fndproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +86,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fndproject.wsgi.application'
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'fnd',
+        'USER': 'postgres',
+        'HOST':'localhost',
+        'PASSWORD': 'SEMBERUA',
+        'PORT': '5432',
     'default':
      {
         'ENGINE': 'django.db.backends.postgresql',
@@ -82,6 +102,13 @@ DATABASES = {
     }
   
 }
+
+# FOR GEODJANGO
+POSTGIS_VERSION = (2, 4, 3)
+
+
+# Password validation
+# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -118,6 +145,28 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS =(
+    os.path.join(BASE_DIR,'static'),
+)
+
+LEAFLET_CONFIG ={
+    'DEFAULT_CENTER': (-0.23, 36.87), #KENYA
+    'DEFAULT_ZOOM': 5,# ZOOM
+    'MAX_ZOOM': 20,
+    'MIN_ZOOM': 3,
+    'SCALE': 'both', #imperial/metric
+    'ATTRIBUTION_PREFIX':'Inspired By Life in Moringa School'
+}
+
+
+if os.name == 'nt':
+    VENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
+
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -135,6 +184,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAdminUser'
    ),
 }
-
 
 
