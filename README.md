@@ -38,7 +38,7 @@ _Fundi Next Door_ is a backend application where users can log in (as users or a
 
 
 ## ** REST API TESTS **
-![TEST 1](![TEST 1](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
+![TEST 1](https://github.com/oyesa/MorningBrew/blob/d556377d6417527ab9fa6c63fee306a33cf17bc5/SCREENSHOT/POSTMAN.PNG)
 
 ![TEST 2](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
 
