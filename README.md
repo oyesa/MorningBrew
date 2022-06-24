@@ -38,12 +38,13 @@ _Fundi Next Door_ is a backend application where users can log in (as users or a
 
 
 ## ** REST API TESTS **
+![TEST 1](![TEST 1](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
 
-![TEST 1](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
+![TEST 2](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
 
-![TEST 2](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(2).png)
+![TEST 3](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(2).png)
 
-![TEST 3](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(3).png)
+![TEST 4](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(3).png)
 
-![TEST 4](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image.png)
+![TEST 5](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image.png)
 
