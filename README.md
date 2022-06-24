@@ -4,7 +4,7 @@ Fundi Next Door is a backend application where users can log in (as users or art
 
 ## _Project_ _Desccription_
 
-**Project Ideation:**This involved  coming up with the project idea and discussing various ways to solve the problem that was presented and doing research on what was needed to bring the application to reality.
+**Project Ideation:** This involved  coming up with the project idea and discussing various ways to solve the problem that was presented and doing research on what was needed to bring the application to reality.
 
 
 **Designing the App;**  coming up with An Entity Relationship (ER) Diagram is a type of flowchart that illustrates how “entities” such as people, objects or concepts relate to each other within a system.
@@ -34,3 +34,15 @@ Fundi Next Door is a backend application where users can log in (as users or art
 
 
 * Service catalog will be integrated in the app so that as a user you’ll be able to view all the available services
+
+
+## ** REST API TESTS **
+
+![TEST 1](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(1).png)
+
+![TEST 2](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(2).png)
+
+![TEST 3](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image(3).png)
+
+![TEST 4](https://github.com/oyesa/MorningBrew/blob/fc132be9db1e6e0ce18fd543e29d22c340734725/SCREENSHOT/image.png)
+
