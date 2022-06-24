@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import  django.contrib.gis
 import cloudinary
+import osgeo
 
 
 
@@ -108,6 +109,9 @@ DATABASES = {
     }
 }
 
+# FOR GEODJANGO
+POSTGIS_VERSION = (2, 4, 3)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -160,6 +164,11 @@ LEAFLET_CONFIG ={
     'ATTRIBUTION_PREFIX':'Inspired By Life in Moringa School'
 }
 
+
+if os.name == 'nt':
+    VENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
 
 
 

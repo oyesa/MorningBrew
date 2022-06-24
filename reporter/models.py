@@ -10,7 +10,7 @@ from osgeo import gdal
 class Incidences(models.Model):
 	name = models.CharField(max_length=20)
 	location = models.PointField(srid=4326)
-	objects = GeoManager()
+    objects = GeoManager()
 
 	def __unicode__(self):
 		return self.name
