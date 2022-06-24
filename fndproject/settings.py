@@ -1,14 +1,11 @@
 
 import os
-<<<<<<< HEAD
 import  django.contrib.gis
 import cloudinary
 import osgeo
 
 
-=======
 import cloudinary
->>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,20 +32,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'django.contrib.gis',
-    'reporter',
-    'rest_framework',
-    'bootstrap4',
-    'crispy_forms',
-    'leaflet',
-    'cloudinary',
-     
-
-    
-    
-
-=======
     'services',
     'rest_framework',
     'portfolio',
@@ -57,7 +40,6 @@ INSTALLED_APPS = [
     'profiles',
     'cloudinary',
     'rest_framework.authtoken',
->>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
 ]
 cloudinary.config(
   cloud_name = "oyesa",
@@ -104,7 +86,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fndproject.wsgi.application'
 
 DATABASES = {
-<<<<<<< HEAD
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'fnd',
@@ -112,19 +93,16 @@ DATABASES = {
         'HOST':'localhost',
         'PASSWORD': 'SEMBERUA',
         'PORT': '5432',
-=======
     'default':
      {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fnd',
         'USER': 'rachel',
     'PASSWORD':'hotspurs',
->>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
     }
   
 }
 
-<<<<<<< HEAD
 # FOR GEODJANGO
 POSTGIS_VERSION = (2, 4, 3)
 
@@ -132,8 +110,6 @@ POSTGIS_VERSION = (2, 4, 3)
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
-=======
->>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -169,7 +145,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
 STATICFILES_DIRS =(
     os.path.join(BASE_DIR,'static'),
 )
@@ -192,7 +167,6 @@ if os.name == 'nt':
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-=======
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -212,5 +186,3 @@ REST_FRAMEWORK = {
 }
 
 
-
->>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
