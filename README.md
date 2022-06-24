@@ -1,5 +1,6 @@
-# MorningBrew
-Fundi Next Door is a backend application where users can log in (as users or artisans) and artisans can create a portfolio to showcase their skills 
+# GEO-LOCATION USING DJANGO AND POSTGIS POSTGRES FOR SPATIAL DATA AND MAPPING
+
+_Fundi Next Door_ is a backend application where users can log in (as users or artisans) and artisans can create a portfolio to showcase their skills 
 
 
 ## _Project_ _Desccription_
