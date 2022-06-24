@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import  django.contrib.gis
+import cloudinary
 
 
 
@@ -45,14 +46,22 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'crispy_forms',
-    'cloudinary',
     'leaflet',
+    'cloudinary',
      
 
     
     
 
 ]
+
+
+cloudinary.config(
+  cloud_name = "moringa-kipkemoi",
+  api_key = "583484295129265",
+  api_secret = "iUp89baICJSY--PpsiI7aOIuGOg",
+)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

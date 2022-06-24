@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.gis.db import models
 from django.db.models import Manager as GeoManager
+from cloudinary.models import CloudinaryField
+from osgeo import gdal
 
 
 # Create your models here.
