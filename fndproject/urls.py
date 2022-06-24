@@ -1,5 +1,5 @@
-"""fndproject URL Configuration
 
+<<<<<<< HEAD
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
 Examples:
@@ -14,10 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.urls import include, re_path
+=======
+from django.urls import path, include
+>>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
 from django.contrib import admin
 
 
 urlpatterns = [
+<<<<<<< HEAD
    re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include('reporter.urls'))
 ]
+=======
+    path('admin/', admin.site.urls),
+    path('',include('services.urls')), 
+    path('',include('portfolio.urls')),
+    path('',include('ratings.urls')),
+    path('', include('authapp.urls')),
+    path('', include('profiles.urls'))
+
+]
+>>>>>>> 2119b5ef082c54ca46981060c4fd053dd381a24e
